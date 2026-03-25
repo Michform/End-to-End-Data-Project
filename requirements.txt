@@ -8,4 +8,5 @@ lightgbm
 catboost
 mlflow
 joblib
+dill
 # -e .
