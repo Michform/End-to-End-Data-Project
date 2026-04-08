@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance</title>
+    <style>
+        :root {
+            --bg: #f6efe5;
+            --card: rgba(255, 252, 247, 0.92);
+            --text: #1f2937;
+            --muted: #6b7280;
+            --primary: #bb5a3c;
+            --primary-dark: #8f4028;
+            --accent: #e7c9a9;
+            --border: rgba(31, 41, 55, 0.08);
+            --shadow: 0 20px 45px rgba(98, 58, 34, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, #f9dcc4 0%, transparent 32%),
+                radial-gradient(circle at bottom right, #f4c7b8 0%, transparent 28%),
+                linear-gradient(135deg, #f8f3eb 0%, #efe2d1 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .page {
+            width: min(1100px, 100%);
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            padding: 56px 48px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0)),
+                linear-gradient(135deg, #fff4e8 0%, #f6d7c6 100%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(187, 90, 60, 0.12);
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            margin: 0 0 16px;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.02;
+        }
+
+        .hero p {
+            margin: 0 0 18px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--muted);
+            max-width: 560px;
+        }
+
+        .hero-points {
+            display: grid;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .hero-point {
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.58);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-point strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .hero-point span {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .panel {
+            padding: 40px 34px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .panel-card {
+            height: 100%;
+            border-radius: 22px;
+            border: 1px solid var(--border);
+            background: #fffdfa;
+            padding: 28px 24px;
+        }
+
+        .panel-card h2 {
+            margin: 0 0 8px;
+            font-size: 1.7rem;
+        }
+
+        .panel-card p {
+            margin: 0 0 22px;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .quick-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .quick-list li {
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: #faf4ed;
+            border: 1px solid #f1dfcf;
+        }
+
+        .cta {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--primary);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .note {
+            margin-top: 18px;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 860px) {
+            .page {
+                grid-template-columns: 1fr;
+            }
+
+            .hero,
+            .panel {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <span class="hero-tag">ML Prediction App</span>
+            <h1>Student Exam Performance Indicator</h1>
+            <p>
+                This project helps estimate student performance using academic and background
+                information. It is a clean starting page for your Flask app while you build the
+                full prediction form and results flow.
+            </p>
+            <div class="hero-points">
+                <div class="hero-point">
+                    <strong>Data Pipeline Ready</strong>
+                    <span>Ingestion, transformation, and model training are already connected.</span>
+                </div>
+                <div class="hero-point">
+                    <strong>Prediction UI Next</strong>
+                    <span>You can plug your input form here when your prediction route is ready.</span>
+                </div>
+                <div class="hero-point">
+                    <strong>User Friendly Start</strong>
+                    <span>A clearer home page makes the app feel more complete while you iterate.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-card">
+                <h2>What This App Does</h2>
+                <p>
+                    The model uses features like reading score, writing score, gender, race or
+                    ethnicity, lunch type, parental education, and test preparation course to help
+                    predict student math performance.
+                </p>
+
+                <ul class="quick-list">
+                    <li>Loads student data and prepares training and test sets</li>
+                    <li>Applies preprocessing for numeric and categorical features</li>
+                    <li>Trains multiple regression models and selects the strongest one</li>
+                </ul>
+
+                <a class="cta" href="/">Refresh Home</a>
+                <div class="note">
+                    When you add a prediction route later, we can turn this into a full interactive form.
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
